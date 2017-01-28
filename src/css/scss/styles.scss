@@ -1,0 +1,36 @@
+// Vendor
+@import "vendor/bootstrap/bootstrap";
+
+// Base
+@import "base/variables/index";
+@import "base/mixins/index";
+@import "base/helpers/index";
+@import "base/typography/index";
+
+// Shared
+@import "shared/classes/index";
+@import "shared/elements/index";
+@import "shared/forms/index";
+
+html,
+body {
+    height: 100%;
+}
+
+.container {
+    margin-top: 10px;
+    height: 100%;
+    section {
+      .content {
+        .location-info-container {
+          display: block;
+          .map-container {
+            .map {
+              height: 300px;
+              width: 600px;
+            }
+          }
+        }
+      }
+    }
+}
