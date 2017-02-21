@@ -11,6 +11,9 @@ Live demo: https://find-my-zip.stromannet.com/
 
 ##Version History
 
+######Version 1.1.0
+- Started using Lodash so address components aren't hard coded anymore.
+
 ######Version 1.0.0
 - Created app that shows zip using Google Maps API and your coordinates.
 - Added a Google Map of your location.

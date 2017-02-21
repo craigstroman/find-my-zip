@@ -1,6 +1,7 @@
+import _ from 'lodash';
+
 (() => {
   const apiKey = 'AIzaSyAJN1inz_UYBWjVZ1KEjVrsvukmLc4eqJ0';
-
   if (!navigator.geolocation) {
     console.log('Geolocation is not available.');
   } else {
@@ -13,16 +14,35 @@
     navigator.geolocation.getCurrentPosition((position) => {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
+
       const xhr = new XMLHttpRequest();
       xhr.addEventListener('load', () => {
+        /**
+         * Finds the address parts.
+         * @param  {Array} addressParts A array of objects.
+         * @param  {String} adressPart   The part of the address to find.
+         * @param  {String} nameType         If the part returned should be in longname form or shortname form.
+         * @return {String}             The address part.
+         */
+        function findAddressComponent(addressParts, adressPart, nameType) {
+          const index = _.findIndex(addressParts, (e) => {
+            if (e.types[0] === adressPart) {
+              return e;
+            }
+            return 0;
+          });
+
+          return (nameType === 'long_name') ? addressParts[index].long_name : addressParts[index].short_name;
+        }
+
         const data = JSON.parse(xhr.responseText);
         const addressComponents = data.results[0].address_components;
-        const streetNumber = addressComponents[0].long_name;
-        const streetName = addressComponents[1].short_name;
-        const city = addressComponents[2].long_name;
-        const state = addressComponents[4].short_name;
-        const zipCode = addressComponents[6].long_name;
-        const country = addressComponents[5].short_name;
+        const streetNumber = findAddressComponent(addressComponents, 'street_number', 'short_name');
+        const streetName = findAddressComponent(addressComponents, 'route', 'short_name');
+        const city = findAddressComponent(addressComponents, 'locality', 'long_name');
+        const state = findAddressComponent(addressComponents, 'administrative_area_level_1', 'short_name');
+        const zipCode = findAddressComponent(addressComponents, 'postal_code', 'long_name');
+        const country = findAddressComponent(addressComponents, 'country', 'short_name');
 
         const addressTextString = `${streetNumber} ${streetName}, ${city}, ${state} ${zipCode} ${country}`;
 
@@ -33,7 +53,6 @@
           },
           zoom: 18,
         });
-
 
         if (!isNaN(zipCode)) {
           zipCodeBlockEl.innerHTML = '';
