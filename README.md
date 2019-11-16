@@ -3,11 +3,11 @@
 A simple utility to find your zip code using geolocation.  This was created in a couple of hours using ES6 style JavaScript.
 
 ## Running locally:
-- git clone https://github.com/craigstroman/Find-My-Zip.git
+- git clone https://github.com/craigstroman/find-my-zip.git
 - cd Find-My-Zip
 - Type in gulp webserver
 
-Live demo: https://find-my-zip.stromannet.com/
+Live demo: https://find-my-zip.craigstroman.com/
 
 ## Version History
 
