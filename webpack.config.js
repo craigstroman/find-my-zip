@@ -1,18 +1,45 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   entry: './src/js/app.js',
-  output: {
-    path: path.join(__dirname, 'src/js'),
-    filename: 'bundle.js'
+  resolve: {
+    extensions: ['js'],
   },
-  devtool: 'source-map',
+  watch: false,
+  watchOptions: {
+    ignored: '/node_modules/',
+  },
+  devtool: 'inline-source-map',
   module: {
-      loaders: [
-          { test: path.join(__dirname, 'src/js'),
-            loader: 'babel-loader' }
-      ]
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+    ],
   },
-  debug: true
+  plugins: [
+    new webpack.SourceMapDevToolPlugin({
+      filename: '[file].map',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+    }),
+  ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    devMiddleware: {
+      publicPath: '/',
+    },
+    open: false,
+    port: 8080,
+  },
 };
