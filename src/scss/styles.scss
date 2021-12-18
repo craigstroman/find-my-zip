@@ -1,0 +1,22 @@
+.container {
+  margin-top: 10px;
+  height: 100%;
+  header {
+    h1 {
+      text-align: center;
+    }
+  }
+  section {
+    .content {
+      .location-info-container {
+        display: block;
+        .map-container {
+          .map {
+            height: 300px;
+            width: 600px;
+          }
+        }
+      }
+    }
+  }
+}
