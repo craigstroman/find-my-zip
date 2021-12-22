@@ -8,6 +8,7 @@ A simple utility to find your zip code using geolocation. This was created in a 
 - cd Find-My-Zip
 - Run `npm install`
 - Run `npm start`
+- Open browser to http://localhost:8080
 
 Live demo: https://find-my-zip.craigstroman.com/
 
