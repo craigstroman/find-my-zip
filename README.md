@@ -16,7 +16,7 @@ Live demo: https://find-my-zip.craigstroman.com/
 ###### Version 2.0.0
 
 - Switching to using Webpack and Webpack Dev Server
-- Upgrading to ES6 JavaScript
+- Now using JavaScript modules
 
 ###### Version 1.1.0
 
