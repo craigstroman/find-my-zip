@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js">
-  <!--<![endif]-->
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -23,7 +18,7 @@
           <p>This site uses geolocation to find your zip code using the Google Maps API.</p>
           <hr />
           <div class="loading">Loading...</div>
-          <div class="location-info-container hidden">
+          <div class="location-info-container">
             <div class="zip-container">
               <p>
                 Your zip code is:
@@ -35,14 +30,10 @@
               <div class="map"></div>
             </div>
           </div>
-          <!-- ./location-info-container -->
         </div>
-        <!-- ./content -->
       </section>
     </div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJN1inz_UYBWjVZ1KEjVrsvukmLc4eqJ0"></script>
-    <!-- build:js -->
     <script src="js/bundle.js"></script>
-    <!-- endbuild -->
   </body>
 </html>
