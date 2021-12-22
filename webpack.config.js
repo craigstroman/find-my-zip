@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  entry: './src/js/app.ts',
+  entry: './src/js/app.js',
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'js/bundle.js',
@@ -16,11 +16,6 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         },
-      },
-      {
-        test: /\.tsx?/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
