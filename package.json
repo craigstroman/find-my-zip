@@ -4,7 +4,7 @@
   "description": "A utility to find your current zip code.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development"
+    "start": "webpack-dev-server --mode development --config webpack.config.dev.js"
   },
   "author": "Craig Stroman",
   "license": "ISC",
@@ -18,6 +18,10 @@
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
     "dotenv-webpack": "^7.0.3",
+    "eslint": "^8.5.0",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.25.3",
     "html-webpack-plugin": "^5.5.0",
     "node-sass": "^7.0.0",
     "sass-loader": "^12.4.0",
