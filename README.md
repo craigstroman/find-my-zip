@@ -2,6 +2,8 @@
 
 A simple utility to find your zip code using geolocation. This was created in a couple of hours using ES6 style JavaScript.
 
+Live demo: https://find-my-zip.craigstroman.com/
+
 ## Running locally:
 
 - git clone https://github.com/craigstroman/find-my-zip.git
@@ -10,7 +12,12 @@ A simple utility to find your zip code using geolocation. This was created in a 
 - Run `npm start`
 - Open browser to http://localhost:8080
 
-Live demo: https://find-my-zip.craigstroman.com/
+## Production Version:
+
+- git clone https://github.com/craigstroman/find-my-zip.git
+- cd Find-My-Zip
+- Run `npm install`
+- Run `npm run build`
 
 ## Version History
 
