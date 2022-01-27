@@ -31,8 +31,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'index.html',
       template: './public/index.html',
+      googleMaps: `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_KEY}`,
     }),
     new Dotenv(),
   ],
