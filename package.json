@@ -16,6 +16,7 @@
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
+    "acorn": "^8.11.3",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
     "dotenv-webpack": "^7.0.3",
@@ -24,6 +25,7 @@
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.25.3",
     "html-webpack-plugin": "^5.5.0",
+    "imurmurhash": "^0.1.4",
     "node-sass": "^7.0.0",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
